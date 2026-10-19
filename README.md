@@ -48,4 +48,3 @@ public/images/            artwork
 docs/                     production build for GitHub Pages
 ```
 
-## Note
