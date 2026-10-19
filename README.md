@@ -1,7 +1,5 @@
 # UGLYCASH app redesign · clickable prototype
 
-An unofficial redesign concept of the UGLYCASH money app by **Mercy Nubi** (product designer & frontend), built as a clickable prototype in **React + TypeScript + Vite**.
-
 **Live demo:** `https://mercy-nubi.github.io/<repo-name>/`
 
 ## What's inside
@@ -51,5 +49,3 @@ docs/                     production build for GitHub Pages
 ```
 
 ## Note
-
-Unofficial redesign concept for portfolio use only. The UGLYCASH name, card artwork and sticker imagery belong to their owners. Usernames, prices and trades are sample data; values in [brackets] are placeholders.
