@@ -1,6 +1,6 @@
 # UGLYCASH app redesign · clickable prototype
 
-**Live demo:** `https://mercy-nubi.github.io/<UGLYCASH>/`
+**Live demo:** `https://mercy-nubi.github.io/UGLYCASH/`
 
 ## What's inside
 
