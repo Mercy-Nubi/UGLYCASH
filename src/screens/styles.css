@@ -1,0 +1,53 @@
+* { box-sizing: border-box; }
+html, body { margin: 0; }
+body { background: #EDE9F0; font-family: "Instrument Sans", "Helvetica Neue", sans-serif; color: #0A0A0A; }
+a { color: inherit; }
+a:hover { color: #E21AE0; }
+.sky { background: #4B9BE0 url("/images/sky.jpg") center / cover no-repeat; }
+input::placeholder, textarea::placeholder { color: #A8A8A3; }
+button { cursor: pointer; }
+:focus-visible { outline: 3px solid #E21AE0; outline-offset: 2px; }
+
+html, body { height: 100%; }
+.stage { min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 16px; gap: 14px; }
+.stage-head { display: flex; align-items: center; gap: 20px; flex-wrap: wrap; justify-content: center; }
+.caption { margin: 0; display: flex; flex-direction: column; gap: 2px; font-size: 13px; color: #4A5C5F; }
+.caption strong { color: #0E1A1C; font-size: 15px; }
+
+.device { position: relative; flex-shrink: 0; border-radius: 48px; box-shadow: 0 0 0 10px #0E1A1C, 0 30px 60px -20px rgba(14,26,28,0.45); }
+.phone { position: absolute; top: 0; left: 0; transform-origin: top left; border-radius: 48px; overflow: hidden; background: #fff; }
+.phone-screen { width: 100%; height: 100%; overflow-y: auto; overflow-x: hidden; overscroll-behavior: contain; scrollbar-width: none; -webkit-overflow-scrolling: touch; }
+.phone-screen::-webkit-scrollbar { display: none; }
+/* Let tall screens scroll inside the phone and keep the app's tab bar pinned. */
+.phone-screen > .screen-enter > div { overflow: clip !important; }
+.phone-screen nav[aria-label="Main"] { position: sticky; bottom: 0; z-index: 5; }
+
+.screen-enter { animation: screen-in .22s ease-out; }
+@keyframes screen-in { from { opacity: 0; transform: translateX(14px); } to { opacity: 1; transform: none; } }
+
+.stage--full { padding: 0; justify-content: flex-start; min-height: 0; height: 100dvh; overflow: hidden; background: #fff; }
+.device--full, .device--full .phone { border-radius: 0; box-shadow: none; }
+
+.toolbar { display: flex; gap: 6px; padding: 6px; border-radius: 999px; background: #0E1A1C; box-shadow: 0 10px 30px rgba(14,26,28,0.3); }
+.toolbar a, .toolbar button { height: 38px; min-width: 38px; padding: 0 14px; border: 0; border-radius: 19px; display: flex; align-items: center; justify-content: center; gap: 6px; font: 700 14px "Instrument Sans", sans-serif; color: #fff; background: transparent; text-decoration: none; white-space: nowrap; }
+.toolbar a:hover, .toolbar button:hover { background: rgba(255,255,255,0.12); color: #fff; }
+.toolbar .primary { background: #E21AE0; color: #FFFFFF; }
+.toolbar .primary:hover { background: #FF6BFD; color: #FFFFFF; }
+
+.fab { position: fixed; right: 10px; top: 50%; transform: translateY(-50%); z-index: 20; display: flex; align-items: center; gap: 8px; }
+.fab-btn { width: 40px; height: 40px; border-radius: 20px; border: 0; background: rgba(14,26,28,0.82); color: #fff; font: 700 20px "Instrument Sans", sans-serif; box-shadow: 0 6px 18px rgba(14,26,28,0.3); }
+
+@media (prefers-reduced-motion: reduce) { .screen-enter { animation: none; } }
+
+.gallery { max-width: 1240px; margin: 0 auto; padding: 32px 16px 120px; }
+.gallery h1 { font-family: "Anton", sans-serif; font-weight: 400; letter-spacing: 0.01em; font-size: clamp(30px, 5vw, 48px); margin: 0 0 6px; letter-spacing: -0.01em; }
+.gallery p.lede { margin: 0 0 28px; color: #4A5C5F; font-size: 16px; max-width: 640px; line-height: 1.5; }
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(170px, 1fr)); gap: 24px 18px; }
+.card { position: relative; display: flex; flex-direction: column; gap: 8px; text-decoration: none; color: #0E1A1C; }
+.thumb { position: relative; width: 100%; aspect-ratio: 390 / 844; border-radius: 20px; overflow: hidden; background: #fff; box-shadow: 0 0 0 1px #D6E0E0, 0 10px 24px -16px rgba(14,26,28,0.4); transition: transform .15s ease, box-shadow .15s ease; }
+.card:hover .thumb { transform: translateY(-3px); box-shadow: 0 0 0 2px #E21AE0, 0 16px 30px -16px rgba(14,26,28,0.5); }
+.thumb > div { position: absolute; top: 0; left: 0; width: 390px; transform-origin: top left; pointer-events: none; }
+.card-link { font-size: 13px; font-weight: 700; color: #0E1A1C; text-decoration: none; }
+.card-link::after { content: ""; position: absolute; inset: 0; border-radius: 20px; }
+.note { margin-top: 40px; font-size: 13px; color: #5A6B6E; line-height: 1.5; }
+@media (prefers-reduced-motion: reduce) { .thumb { transition: none; } }
